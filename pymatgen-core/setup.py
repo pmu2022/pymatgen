@@ -22,7 +22,7 @@ def package_files(directory, extensions):
             if any([filename.endswith(ext) for ext in extensions]):
                 paths.append(os.path.join('..', path, filename))
     return paths
-json_yaml_csv_files = package_files('pymatgen', ['yaml', 'json', 'csv', 'yaml.gz', 'json.gz', 'csv.gz'])
+json_yaml_csv_files = package_files('pymatgen', ['yaml', 'json', 'csv', 'py', 'yaml.gz', 'json.gz', 'csv.gz'])
 
 long_desc = """
 Note: this is pymatgen *core classes* only. Unless you are a developer you 
@@ -86,8 +86,8 @@ who require Python 2.7 should install pymatgen v2018.x.
 
 setup(
     name="pymatgen_core",
-    packages=[],
-    version="2021.1.28.01",
+    packages=["pymatgen"],
+    version="2021.1.28.02",
     setup_requires=['numpy>=1.18.0', 'setuptools>=43.0.0'],
     python_requires='>=3.6',
     install_requires=["numpy>=1.14.3", "requests", "ruamel.yaml>=0.15.6",
